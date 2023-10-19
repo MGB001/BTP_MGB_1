@@ -61,8 +61,8 @@ CLASS zcl_cargar_biblioteca_mg IMPLEMENTATION.
     ( bi_categ ='H' descripcion ='Geografía, historia') ).
 
     "Delete possible entries; insert new entries
-    DELETE FROM ztbcateg_log.
-    INSERT ztbcateg_log FROM TABLE @lt_catego.
+    DELETE FROM ztbcateg_mg.
+    INSERT ztbcateg_mg FROM TABLE @lt_catego.
 
     IF sy-subrc EQ 0.
       out->write( |Categorias: { sy-dbcnt } registros insertados| ).
