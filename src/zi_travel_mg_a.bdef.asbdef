@@ -1,0 +1,29 @@
+interface;
+use draft;
+
+define behavior for ZI_TRAVEL_mg_A alias Travel
+{
+  use create;
+  use update;
+  use delete;
+
+  use action acceptTravel;
+  use action rejectTravel;
+  use action deductDiscount;
+
+  use action Resume;
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Prepare;
+
+  use association _Booking { create; with draft; }
+}
+
+define behavior for ZI_BOOKING_mg_A alias Booking
+{
+  use update;
+  use delete;
+
+  use association _Travel { with draft; }
+}
